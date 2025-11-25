@@ -1,0 +1,306 @@
+/* variables */
+:root{
+  --bg-start: #f7e9fb;
+  --bg-mid: #f0d6f6;
+  --acc1: #f09ac0; /* brighter pink */
+  --acc2: #d94c8f; /* deeper pink */
+  --muted: #666;
+  --card-radius: 28px;
+}
+
+/* SECTION + HERO BACKGROUND */
+.ap-section{
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(135deg, var(--bg-start), #ecd5e3 40%, #ddb9d2 100%);
+  padding: 40px 18px 120px; /* extra bottom so card fits */
+}
+
+/* hero top decorative band (matches image's top purple band) */
+.ap-hero{
+  height: 170px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 18px;
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(217,100,160,0.10), transparent 20%),
+              linear-gradient(90deg,  #ff68c5);
+  box-shadow: 0 20px 80px rgba(201,61,116,0.08);
+}
+
+/* container that places card overlapping the hero */
+.ap-container{
+  max-width: 1200px;
+  margin: -70px auto 0; /* negative margin to overlap */
+  padding: 0 18px;
+  position: relative;
+}
+
+/* shell for card to help align and create outer padding */
+.ap-card-shell{
+  width: 100%;
+  position: relative;
+}
+
+/* WHITE CARD (main surface) */
+.ap-card{
+  background: white;
+  border-radius: var(--card-radius);
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  padding: 28px 30px;
+  box-shadow: 0 30px 70px rgba(209, 64, 115, 0.12);
+  position: relative;
+  overflow: visible;
+}
+
+/* create side rounded cutouts using pseudo elements — left & right */
+.ap-card::before,
+.ap-card::after{
+  content: "";
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 84px;
+  height: 84px;
+  background: white;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(200,60,120,0.05);
+  z-index: 1;
+}
+
+/* left pill (cut into surrounding hero bg) */
+.ap-card::before{
+  left: -40px;
+  clip-path: inset(0 0 0 0 round 999px); /* keep perfectly round */
+}
+
+/* right pill */
+.ap-card::after{
+  right: -40px;
+}
+
+/* LEFT CONTENT (text) placed inside white card */
+.ap-card-left{
+  padding: 6px 4px;
+  position: relative;
+  z-index: 2;
+}
+
+/* eyebrow like heading */
+.ap-eyebrow{
+  color: var(--acc2);
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* main title */
+.ap-title{
+  color: #111;
+  font-size: 28px;
+  margin: 6px 0 12px;
+  font-weight: 800;
+}
+
+/* body paragraph */
+.ap-body{
+  color:black;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* small hr (decor) */
+.ap-hr{
+  width: 48px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--acc1), var(--acc2));
+  border-radius: 6px;
+  margin: 18px 0;
+}
+
+/* subhead + list */
+.ap-subhead{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ap-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ap-list li{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.ap-check{
+  min-width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  color: var(--acc2);
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid #fde6f0;
+  box-shadow: 0 8px 20px rgba(217, 53, 121, 0.06);
+  padding: 2px 6px;
+}
+
+/* contact chips */
+.ap-contacts{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.ap-chip{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background: linear-gradient(180deg, #fff, #fff);
+  padding:10px 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(217, 53, 121, 0.06);
+}
+
+.ap-icon{ font-size: 18px; color: var(--acc2); }
+
+.label{ font-size: 12px; color: #888; }
+.value{ font-weight:700; color:#222; }
+
+/* RIGHT SIDE (form) */
+.ap-card-right{
+  padding: 6px 6px;
+  position: relative;
+  z-index: 2;
+  display:flex;
+  flex-direction:column;
+}
+
+.ap-card-title{
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--acc2);
+  margin-bottom:14px;
+}
+
+/* form */
+.ap-form{ width:100%; display:flex; flex-direction:column; gap:12px; }
+
+/* rows */
+.ap-row{ display:flex; gap:12px; }
+.ap-field{ margin-top:6px; }
+
+/* inputs */
+.ap-input, .ap-textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border: 1px solid #f4d4e7;
+  font-size:14px;
+  outline:none;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(210,60,120,0.03) inset;
+}
+
+.ap-input:focus, .ap-textarea:focus{
+  border-color: var(--acc2);
+  box-shadow: 0 10px 30px rgba(217, 53, 121, 0.06);
+}
+
+/* icon inside input */
+.ap-input-icon{ position:relative; width:100%; }
+.ap-input-icon .icon{ position:absolute; right:10px; top:50%; transform:translateY(-50%); opacity:0.7; }
+
+/* textarea */
+.ap-textarea{ min-height:90px; resize:vertical; }
+
+/* CTA */
+.ap-cta{
+  margin-top:10px;
+  padding:12px 16px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  color:white;
+  font-weight:700;
+  font-size:16px;
+  background: linear-gradient(90deg, var(--acc1), var(--acc2));
+  box-shadow: 0 18px 40px rgba(217, 53, 121, 0.18);
+}
+
+/* RESPONSIVE */
+/* Tablets & below */
+@media (max-width: 980px) {
+
+  /* turn into 1-column layout */
+  .ap-card {
+    grid-template-columns: 1fr;
+    padding: 22px 20px;
+  }
+
+  /* hide side decorative circles */
+  .ap-card::before,
+  .ap-card::after {
+    display: none;
+  }
+
+  /* stack contact chips */
+  .ap-contacts {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* form rows become stacked */
+  .ap-row {
+    flex-direction: column;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .ap-section {
+    padding: 30px 14px 100px;
+  }
+
+  .ap-hero {
+    height: 120px;
+    border-radius: 14px;
+  }
+
+  .ap-card {
+    border-radius: 20px;
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .ap-title {
+    font-size: 22px;
+  }
+
+  .ap-card-title {
+    font-size: 18px;
+  }
+
+  .ap-input,
+  .ap-textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .ap-cta {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
