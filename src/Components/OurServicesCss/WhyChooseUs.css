@@ -1,0 +1,119 @@
+:root {
+  --pink: #f6b6d6;
+  --pink-strong: #f08ab8;
+  --shadow: 0 20px 40px rgba(0,0,0,0.15);
+  --muted: #666;
+}
+
+/* Section Background */
+.wcu {
+  padding: 50px;
+  background: linear-gradient(135deg, #fde8f3, #f7f0f7);
+  display: flex;
+  justify-content: center;
+}
+
+/* White Card */
+.wcu-card {
+  background: white;
+  border-radius: 22px;
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  box-shadow: var(--shadow);
+}
+
+/* LEFT IMAGE */
+.imageWrap {
+  position: relative;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+/* Pink Decorative Plus */
+.decor-plus {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  width: 55px;
+  height: 55px;
+  background: var(--pink-strong);
+  border-radius: 10px;
+}
+
+/* RIGHT SIDE */
+.eyebrow {
+  color: #d94c8f;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Title Styling */
+.wcu-title {
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 12px 0 20px;
+  font-weight: 800;
+  color:#ff1fa9;
+}
+
+
+
+
+/* Subtitle */
+.wcu-subtitle {
+  color: var(--muted);
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* FEATURES GRID */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 30px;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #ffe4ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wcu-card {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid{
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,273 @@
+.glass-footer {
+  padding: 3rem 1.5rem;
+  border-radius: 25px 25px 0 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-boxN {
+  max-width: 300px;
+  color: #2c2c2c;
+}
+
+.footer-boxN h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  color: #2c2c2c;
+  font-weight: bold;
+}
+
+.footer-boxN h3::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 3px;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+}
+
+.footer-logo {
+  max-height: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #7a7a7a;
+  font-weight: 500;
+}
+
+.footer-linkN {
+  display: block;
+  text-decoration: none;
+  margin: 0.6rem 0;
+  color: #2c2c2c;
+  padding-left: 8px;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-linkN:hover {
+  color: #ff68c5;
+  font-weight: bold;
+}
+
+.footer-boxN p,
+.footer-boxN a {
+  font-size: 1rem;
+  color: #2c2c2c;
+}
+
+.footer-boxN a {
+  font-weight: 500;
+}
+
+.footer-boxN a:hover {
+  color: #ff68c5;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  border-top: 1px solid #e2dcd7;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.social-icon {
+  color: #ff68c5;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #ff68c5;
+}
+
+.social-iconsParent{
+  margin-left: -66px;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: #fff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #ff0000;
+  color: #fff;
+}
+
+.wrapper .whatsapp:hover,
+.wrapper .whatsapp:hover .tooltip,
+.wrapper .whatsapp:hover .tooltip::before {
+background-color: #1db954;
+  color: #fff;
+}
+
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-boxN {
+    text-align: left;
+  }
+}
+
+/* === Font Scaling (Responsive) === */
+.footer-text {
+  font-size: 1rem;
+  color: #2c2c2c;
+  font-weight: 500;
+   text-decoration: none;
+   margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .footer-boxN h3 {
+    font-size: 1.1rem;
+  }
+  .footer-text {
+    font-size: 0.9rem;
+  }
+  .tagline {
+    font-size: 0.85rem;
+  }
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-boxN h3 {
+    font-size: 1.2rem;
+  }
+  .footer-text {
+    font-size: 0.95rem;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  .footer-bottom p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .footer-boxN h3 {
+    font-size: 1.5rem;
+  }
+  .footer-text {
+    font-size: 1.05rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .footer-bottom p {
+    font-size: 1rem;
+  }
+}

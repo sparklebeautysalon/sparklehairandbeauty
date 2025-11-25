@@ -1,0 +1,176 @@
+/* ServicesHoverReveal.css — PINK THEME VERSION */
+
+:root{
+  --bg: #fff;
+  --panel-bg: #ffb7d9;       /* Soft Pink background instead of green */
+  --panel-text: #4a0034;     /* Deep berry text for contrast */
+  --accent-pink: #ff5fa8;    /* Button + highlight pink */
+  --card-radius: 18px;
+  --gap: 18px;
+  --shadow: 0 20px 50px rgba(255, 93, 162, 0.15);
+}
+
+/* Section */
+.shr-section {
+  padding: 28px;
+  background: var(--bg);
+  display:flex;
+  justify-content:center;
+}
+
+/* Grid */
+.shr-grid {
+  width:100%;
+  max-width:1200px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+/* CARD */
+.shr-card {
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 360px;
+  transition: transform 220ms ease;
+  outline: none;
+}
+.shr-card:hover { transform: translateY(-6px); }
+
+/* MEDIA */
+.shr-media {
+  position: relative;
+  height: 100%;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 600ms cubic-bezier(.16,.8,.2,1), filter 320ms;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* center text */
+.shr-media-overlay {
+  text-align:center;
+  color: rgba(255,255,255,0.95);
+  padding: 28px;
+  max-width: 70%;
+  z-index: 2;
+}
+.shr-media-title {
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 30px);
+  text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  /* color: #ffe2ef;  */
+}
+.shr-media-sub {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+}
+.parentServices-Home{
+  background-color: white;
+}
+.services-intro-subline {
+  color: #ff1fa9;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.services-intro-title {
+  /* font-size: clamp(28px, 4vw, 44px); */
+  font-weight: 900;
+  color: #ff1fa9;
+  line-height: 1.1;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* PANEL - replaced green with pink */
+.shr-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: var(--panel-bg);         /* now soft pink */
+  color: var(--panel-text);            /* deep plum text */
+  padding: 40px 28px;
+  transform: translateY(96%);
+  transition: transform 600ms cubic-bezier(.16,.8,.2,1), opacity 320ms;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 18px;
+}
+
+
+
+.shr-panel-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 28px);
+}
+.shr-panel-copy {
+  margin: 0;
+  color: #4a0034;   /* readable dark pink */
+  text-align:center;
+  max-width: 70%;
+  line-height:1.6;
+}
+
+/* CTA button */
+.shr-panel-cta {
+  display:inline-block;
+  background: var(--accent-pink);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow: 0 10px 30px rgba(255, 93, 162, 0.25);
+}
+
+/* Hover/expand show panel */
+.shr-card:hover .shr-media,
+.shr-card.is-expanded .shr-media {
+  transform: translateY(38%);
+  filter: saturate(1.04);
+}
+
+.shr-card:hover .shr-panel,
+.shr-card.is-expanded .shr-panel {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* hide text when sliding */
+.shr-card:hover .shr-media-overlay,
+.shr-card.is-expanded .shr-media-overlay {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 220ms, transform 220ms;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .shr-grid { grid-template-columns: repeat(2, 1fr); }
+  .shr-media { min-height: 300px; }
+}
+
+@media (max-width: 560px) {
+  .shr-grid { grid-template-columns: 1fr; gap: 14px; }
+  .shr-media { min-height: 220px; }
+  .shr-panel { padding: 20px; }
+  .shr-media-overlay { max-width: 90%; }
+  .shr-panel-copy { max-width: 100%; }
+}

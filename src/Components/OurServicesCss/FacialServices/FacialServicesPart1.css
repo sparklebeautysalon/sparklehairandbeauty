@@ -1,0 +1,115 @@
+
+/* *, *::before, *::after { box-sizing: border-box; } */
+
+/* outer */
+.fsp-section {
+  width: 100%;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.fsp-card {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(6,24,44,0.06);
+}
+
+/* equal columns */
+.fsp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  min-height: 380px;
+}
+
+/* LEFT */
+.fsp-left { display: flex; align-items: center; }
+.fsp-left-inner { width: 100%; padding-right: 6px; }
+
+/* Title: JS-controlled words */
+.fsp-title {
+  margin: 0 0 14px 0;
+  font-size: 34px;
+  line-height: 1.05;
+  color: #111827;
+  font-weight: 800;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Each word base style */
+.fsp-title .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  color: #ff68c5; /* pink emphasis */
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 34px;
+  font-weight: 800;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+}
+
+/* When JS adds .visible -> final state */
+.fsp-title .word.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Subtext */
+.fsp-sub {
+  margin: 8px 0 16px;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.fsp-actions { display:flex; gap:12px; margin-top:8px; }
+.fsp-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6e7ea;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.fsp-btn.primary {
+  background: #ff68c5;
+  border: none;
+  color: #fff;
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fsp-grid { grid-template-columns: 1fr; gap: 18px; min-height: auto; }
+  .fsp-card { padding: 18px; }
+  .fsp-title { font-size: 22px; }
+  .fsp-title .word { font-size: 22px; padding: 0 4px; }
+  .fsp-carousel-wrap { height: 220px; }
+}
+/* DEFAULT WORD COLOR */
+.word.w-default {
+  color: #ff68c5;   /* pink */
+}
+
+/* SECOND WORD COLOR */
+.word.w-pink {
+  color: #450dc6;   /* brighter pink */
+}
+
+/* THIRD WORD COLOR */
+.word.w-blue {
+  color: #8354f2;   /* violet/blue shade */
+}
